@@ -1,13 +1,37 @@
 import Head from 'next/head'
-import '../styles/globals.css'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+`
+const theme = {
+  colors: {
+    primary: '#0070f3',
+  },
+}
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#ffffff"></meta>
+        <meta name="theme-color" content="#ffffff" />
         <link rel="icon" href="/images/favicon-32x32.png" />
         <link rel="apple-touch-icon" sizes="48x48" href="/images/icon-48x48.png"/>
         <link rel="apple-touch-icon" sizes="72x72" href="/images/icon-72x72.png"/>
@@ -18,7 +42,10 @@ function MyApp({ Component, pageProps }) {
         <link rel="apple-touch-icon" sizes="384x384" href="/images/icon-384x384.png"/>
         <link rel="apple-touch-icon" sizes="512x512" href="/images/icon-512x512.png"/>
       </Head>
-      <Component {...pageProps} />
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }
