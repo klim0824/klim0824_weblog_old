@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import 'sanitize.css'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
