@@ -5,6 +5,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   html,
   body {
+    font-family:  "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   }
 `
 const theme = {
