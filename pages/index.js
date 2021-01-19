@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import styled from 'styled-components'
 
+import Footer from '../components/Footer'
+
 export default function Home() {
   return (
     <div>
@@ -11,9 +13,8 @@ export default function Home() {
       <main role="main">
         <Title>My First Next.js Page</Title>
       </main>
-
-      <footer>
-      </footer>
+      
+      <Footer />
     </div>
   )
 }
