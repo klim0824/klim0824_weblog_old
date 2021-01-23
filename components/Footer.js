@@ -1,16 +1,11 @@
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
-
+// import styled from 'styled-components'
+// import tw from 'tailwind.macro'
 
 const Footer = () => {
-  const Footer = styled.footer`
-    ${tw`text-center`};
-  `;
-
   return (
-    <Footer>
+    <footer className="text-center">
       <small>©2021 klim0824</small>
-    </Footer>
+    </footer>
   );
 }
 
