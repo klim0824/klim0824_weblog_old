@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ja" dir="ltr">
         <Head />
-        <body>
+        <body className="text-black">
           <Main />
           <NextScript />
         </body>
