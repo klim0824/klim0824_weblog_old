@@ -1,8 +1,10 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
+import tw from 'tailwind.macro'
+
 
 const Footer = () => {
   const Footer = styled.footer`
-    text-align: center;
+    ${tw`text-center`};
   `;
 
   return (
