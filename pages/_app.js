@@ -2,6 +2,7 @@ import Head from 'next/head'
 import 'sanitize.css'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import "./styles.css";
+import meta from "../utilities/constants"
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -22,6 +23,8 @@ function MyApp({ Component, pageProps }) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#F9F9F9" />
+        <meta name="author" content={meta.author} />
+        <meta name="format-detection" content="telephone=no" />
         <link rel="icon" href="/images/favicon-32x32.png" />
         <link rel="apple-touch-icon" sizes="48x48" href="/images/icon-48x48.png"/>
         <link rel="apple-touch-icon" sizes="72x72" href="/images/icon-72x72.png"/>
