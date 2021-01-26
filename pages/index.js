@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import meta from "../utilities/constants"
+import meta from "../utilities/meta"
 
 export default function Home({ weblog }) {
   return (
