@@ -1,6 +1,6 @@
 // import styled from 'styled-components'
 // import tw from 'tailwind.macro'
-import meta from "../utilities/constants"
+import meta from "../utilities/meta"
 
 const Footer = () => {
   return (
