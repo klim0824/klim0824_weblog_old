@@ -35,12 +35,12 @@ export const getStaticPaths = async () => {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async context => {
-  const id = context.params.category;
+  const category = context.params.category;
   const key = {
     headers: {'X-API-KEY': process.env.API_KEY},
   };
   const data = await fetch(
-    'https://klim0824.microcms.io/api/v1/weblog/?filters=category[contains]' + id,
+    'https://klim0824.microcms.io/api/v1/weblog/?filters=category[contains]' + category,
     key,
   )
     .then(res => res.json())
