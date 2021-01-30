@@ -35,8 +35,16 @@ export default function Home({ weblog }) {
         <ul>
           {weblog.map(weblog => (
             <li key={weblog.id}>
-              <Link href={`weblog/${weblog.id}`}>
-                <a>{weblog.title}</a>
+              <Link href={`weblog/${weblog.category[0]}/${weblog.id}`}>
+                <a>
+                  <p>{weblog.title}</p>
+                  <p>{weblog.createdAt}</p>
+                </a>
+              </Link>
+              <Link href={`weblog/${weblog.category[0]}/`}>
+                <a>
+                  <p>{weblog.category[0]}</p>
+                </a>
               </Link>
             </li>
           ))}
