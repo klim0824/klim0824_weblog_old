@@ -1,12 +1,30 @@
+import Head from 'next/head'
 import Link from 'next/link';
 
 import Layout from '../../../components/Layout'
 
 export default function WeblogId({ weblog }) {
   return (
-    <Layout place="page">
-      <p>{weblog.title}</p>
-    </Layout>
+    <>
+      <Head>
+        <title key="title">{weblog.title}</title>
+        <meta key="description" name="description" content={weblog.description} />
+        <meta key="og:title" property="og:title" content={weblog.title} />
+        <meta key="og:description"  property="og:description" content={weblog.description} />
+      </Head>
+      <Layout place="page">
+        <h1>{weblog.title}</h1>
+        <div>createdAt: {weblog.createdAt}</div>
+        <div>updatedAt: {weblog.updatedAt}</div>
+        <div>category: {weblog.category[0]}</div>
+
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${weblog.body}`,
+          }}
+        />
+      </Layout>
+    </>
   );
 }
   
