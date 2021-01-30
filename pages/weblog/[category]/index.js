@@ -2,9 +2,10 @@ import Link from 'next/link';
 
 import Layout from '../../../components/Layout'
 
-export default function WeblogCategory({ weblog }) {
+export default function WeblogCategory({ weblog, category }) {
   return (
-    <Layout place="home">
+    <Layout place="page">
+      <h1>{category}カテゴリー 記事一覧</h1>
       <ul>
         {weblog.map(weblog => (
           <li key={weblog.id}>
@@ -50,6 +51,7 @@ export const getStaticProps = async context => {
   return {
     props: {
       weblog: data.contents,
+      category
     },
   };
 };
