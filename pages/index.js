@@ -7,7 +7,7 @@ import meta from "../utilities/meta"
 
 export default function Home({ weblog }) {
   return (
-    <div>
+    <>
       <Head>
         <title>{meta.name}</title>
         <meta name="title" content={meta.name} />
@@ -47,7 +47,7 @@ export default function Home({ weblog }) {
           ))}
         </ul>
       </Layout>
-    </div>
+    </>
   )
 }
 
