@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ja" dir="ltr">
         <Head />
-        <body className="text-black bg-white leading-7 tracking-widest break-words">
+        <body className="text-black bg-white leading-7 tracking-widest break-words overflow-y-scroll">
           <Main />
           <NextScript />
         </body>
