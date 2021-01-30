@@ -4,7 +4,7 @@ import meta from "../utilities/meta"
 
 const Footer = () => {
   return (
-    <footer className="text-center">
+    <footer className="p-4 text-center">
       <small>©2021 {meta.author}</small>
     </footer>
   );

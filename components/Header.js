@@ -5,13 +5,13 @@ const Header = props => (
     {(() => {
       if (props.place === 'home') {
         return (
-          <h1>
+          <h1 className="m-8 text-3xl font-semibold">
             <HeaderLink />
           </h1>
         )
       } else if (props.place === 'page') {
         return (
-          <div>
+          <div className="m-8 text-3xl font-semibold">
             <HeaderLink />
           </div>
         )
