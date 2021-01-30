@@ -1,22 +1,24 @@
 import Link from 'next/link';
 
+import Layout from '../../../components/Layout'
+
 export default function WeblogCategory({ weblog }) {
   return (
-    <main role="main" className="max-w-3xl mx-4 md:mx-auto">
-    <ul>
-      {weblog.map(weblog => (
-        <li key={weblog.id}>
-          <Link href={`${weblog.category[0]}/${weblog.id}`}>
-            <a>
-              <p>{weblog.title}</p>
-              {/* <p>{weblog.createdAt}</p> */}
-              <p>{weblog.category[0]}</p>
-            </a>
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </main>
+    <Layout place="home">
+      <ul>
+        {weblog.map(weblog => (
+          <li key={weblog.id}>
+            <Link href={`${weblog.category[0]}/${weblog.id}`}>
+              <a>
+                <p>{weblog.title}</p>
+                {/* <p>{weblog.createdAt}</p> */}
+                <p>{weblog.category[0]}</p>
+              </a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Layout>
   );
 }
   

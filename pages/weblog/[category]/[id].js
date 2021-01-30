@@ -1,10 +1,12 @@
 import Link from 'next/link';
 
+import Layout from '../../../components/Layout'
+
 export default function WeblogId({ weblog }) {
   return (
-    <main role="main" className="max-w-3xl mx-4 md:mx-auto">
+    <Layout place="page">
       <p>{weblog.title}</p>
-    </main>
+    </Layout>
   );
 }
   
