@@ -34,6 +34,22 @@ function MyApp({ Component, pageProps }) {
         <link rel="apple-touch-icon" sizes="256x256" href="/images/icon-256x256.png"/>
         <link rel="apple-touch-icon" sizes="384x384" href="/images/icon-384x384.png"/>
         <link rel="apple-touch-icon" sizes="512x512" href="/images/icon-512x512.png"/>
+        <title key="title">{meta.name}</title>
+        <meta key="description" name="description" content={meta.description} />
+
+        <meta key="og:title" property="og:title" content={meta.name} />
+        <meta key="og:description"  property="og:description" content={meta.description} />
+        <meta property="og:image" content={meta.url + 'images/icon-256x256.png'} />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="ja_JP" />
+        <meta property="og:url" content={meta.url} />
+        <meta property="og:site_name" content={meta.name} />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content={'@' + meta.author} />
+        <meta name="twitter:creator" content={'@' + meta.author} />
+
+        <link rel="canonical" href={meta.url} />
       </Head>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
