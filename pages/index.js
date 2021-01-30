@@ -2,8 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link';
 import styled from 'styled-components'
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Layout from '../components/Layout'
 import meta from "../utilities/meta"
 
 export default function Home({ weblog }) {
@@ -29,9 +28,7 @@ export default function Home({ weblog }) {
         <link rel="canonical" href={meta.url} />
       </Head>
 
-      <Header place="home"/>
-
-      <main role="main" className="max-w-3xl mx-4 md:mx-auto">
+      <Layout place="home">
         <ul>
           {weblog.map(weblog => (
             <li key={weblog.id}>
@@ -49,9 +46,7 @@ export default function Home({ weblog }) {
             </li>
           ))}
         </ul>
-      </main>
-      
-      <Footer />
+      </Layout>
     </div>
   )
 }
