@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import Layout from '@/components/Layout'
 import meta from '@/utilities/meta'
+import date from '@/utilities/date'
 
 export default function WeblogId({ weblog }) {
   return (
@@ -34,8 +35,18 @@ export default function WeblogId({ weblog }) {
               <a>{weblog.title}</a>
             </Link>
           </h1>
-          <div>createdAt: {weblog.createdAt}</div>
-          <div>updatedAt: {weblog.updatedAt}</div>
+          <div>
+            createdAt:
+            <time dateTime={date(weblog.createdAt, '-')}>
+              {date(weblog.createdAt)}
+            </time>
+          </div>
+          <div>
+            updatedAt:
+            <time dateTime={date(weblog.updatedAt, '-')}>
+              {date(weblog.updatedAt)}
+            </time>
+          </div>
           <div>
             <Link href={`/weblog/${weblog.category[0]}/`}>
               <a>category: {weblog.category[0]}</a>

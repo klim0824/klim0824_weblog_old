@@ -2,6 +2,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 import Layout from '@/components/Layout'
+import date from '@/utilities/date'
 
 export default function Home({ weblog }) {
   return (
@@ -12,8 +13,13 @@ export default function Home({ weblog }) {
             <li key={weblog.id}>
               <Link href={`weblog/${weblog.category[0]}/${weblog.id}`}>
                 <a>
-                  <p>{weblog.title}</p>
-                  <p>{weblog.createdAt}</p>
+                  <p>
+                    {weblog.title}
+                    <br />
+                    <time dateTime={date(weblog.createdAt, '-')}>
+                      {date(weblog.createdAt)}
+                    </time>
+                  </p>
                 </a>
               </Link>
               <Link href={`weblog/${weblog.category[0]}/`}>
