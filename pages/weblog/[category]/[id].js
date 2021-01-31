@@ -2,27 +2,44 @@ import Head from 'next/head'
 import Link from 'next/link';
 
 import Layout from '../../../components/Layout'
+import meta from "../../../utilities/meta"
+
 
 export default function WeblogId({ weblog }) {
   return (
     <>
       <Head>
-        <title key="title">{weblog.title}</title>
+        <title key="title">{weblog.title} | {meta.name}</title>
         <meta key="description" name="description" content={weblog.description} />
-        <meta key="og:title" property="og:title" content={weblog.title} />
-        <meta key="og:description"  property="og:description" content={weblog.description} />
+        <meta key="og:title" property="og:title" content={weblog.title + ' | ' + meta.name} />
+        <meta key="og:description" property="og:description" content={weblog.description} />
       </Head>
       <Layout place="page">
-        <h1>{weblog.title}</h1>
-        <div>createdAt: {weblog.createdAt}</div>
-        <div>updatedAt: {weblog.updatedAt}</div>
-        <div>category: {weblog.category[0]}</div>
+        <article>
+          <h1>
+            <Link href={`/weblog/${weblog.category[0]}/${weblog.id}`}>
+              <a>
+                {weblog.title}
+              </a>
+            </Link>
 
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `${weblog.body}`,
-          }}
-        />
+          </h1>
+          <div>createdAt: {weblog.createdAt}</div>
+          <div>updatedAt: {weblog.updatedAt}</div>
+          <div>
+            <Link href={`/weblog/${weblog.category[0]}/`}>
+              <a>
+                category: {weblog.category[0]}
+              </a>
+            </Link>
+          </div>
+
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `${weblog.body}`,
+            }}
+          />
+        </article>
       </Layout>
     </>
   );
