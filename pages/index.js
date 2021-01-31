@@ -27,6 +27,17 @@ export default function Home({ weblog }) {
                   <p>{weblog.category[0]}</p>
                 </a>
               </Link>
+              {(() => {
+                if (weblog.tag.length > 0) {
+                  return (
+                    <ul>
+                      {weblog.tag.map((tag) => {
+                        return <li key={tag}>{tag}</li>
+                      })}
+                    </ul>
+                  )
+                }
+              })()}
             </li>
           ))}
         </ul>
