@@ -1,6 +1,6 @@
 import HeaderLink from '../components/HeaderLink'
 
-const Header = props => (
+const Header = (props) => (
   <header className="text-center">
     {(() => {
       if (props.place === 'home') {

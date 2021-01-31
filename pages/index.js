@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from 'next/link'
 import styled from 'styled-components'
 
 import Layout from '../components/Layout'
@@ -8,7 +8,7 @@ export default function Home({ weblog }) {
     <>
       <Layout place="home">
         <ul>
-          {weblog.map(weblog => (
+          {weblog.map((weblog) => (
             <li key={weblog.id}>
               <Link href={`weblog/${weblog.category[0]}/${weblog.id}`}>
                 <a>
@@ -31,14 +31,14 @@ export default function Home({ weblog }) {
 
 export const getStaticProps = async () => {
   const apiKey = {
-    headers: {'X-API-KEY': process.env.API_KEY},
-  };
+    headers: { 'X-API-KEY': process.env.API_KEY },
+  }
   const data = await fetch('https://klim0824.microcms.io/api/v1/weblog', apiKey)
-    .then(res => res.json())
-    .catch(() => null);
+    .then((res) => res.json())
+    .catch(() => null)
   return {
     props: {
       weblog: data.contents,
     },
-  };
-};
+  }
+}
