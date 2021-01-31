@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import Layout from '../components/Layout'
+import Layout from '@/components/Layout'
 
 export default function Home({ weblog }) {
   return (

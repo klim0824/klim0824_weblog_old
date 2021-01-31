@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-import Layout from '../../../components/Layout'
-import meta from '../../../utilities/meta'
+import Layout from '@/components/Layout'
+import meta from '@/utilities/meta'
 
 export default function WeblogId({ weblog }) {
   return (
